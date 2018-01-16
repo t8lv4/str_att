@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh12260\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 these past weeks i made progress with an operator project. the idea came from this @glia\'92s post (thanks !) : there are drawings of 39 strange attractors.\
+while i was looking for definitions, code examples, how to resolve derivative functions, etc. i\'92ve found this site : \'85 it\'92s 3D drawings you can play with, randomize values, zoom in and out. very nice.\
+\
+what i like with these functions is the possibility to get a set of 3 values from a single input.\
+\
+my goal is to write an operator that allow to choose a strange attractor out of a list of 39, choose operator behavior : output contiguous set of values at trigger, or output a set of values at given index, choose a \'93time\'94 delta.\
+constants and values at index 0 are fixed (though one can easily change them).\
+\
+i\'92m stuck now. to get to the point of an actual op, i need help. \
+\
+as i\'92ve been trained to write simple C codes that work with an OS, stdlib and stdio, getting into aleph source code is a very different experience, quite challenging and difficult. i get easily lost in it. i guess i miss something fundamental about the embedded environment that would help me to understand what it is, how things work, or are built. if you can point me to useful info, resources, etc. i\'92d be pleased !\
+\
+i\'92ve followed @rick_monster\'92s advice and got the environment set up (thanks for your help !). from there i thought i would go step by step (baby step i guess) and start with some kind of prototype. i uploaded the code and a \'91prog\'92 file : it\'92s an app you can run from a terminal. it will give you a taste of what i aim at.\
+with this app you can choose between two strange attractors, then choose a behavior, then choose a delta. after this set up, each time you trigger the app, or each time you give an index, you\'92ll get a set of three values.\
+\
+i\'92ve built this app this way because i thought it would fit in the bees files organisation : main.c would be op_strange_attractor.c (or whatever the name will be), str_att.c and .h would be macros (is this the correct word ?) like op_math.c and .h\
+but is it a way to go ?\
+i understand this op could be a problem because of its size. how do you know there\'92s a limit ? where do you find the info ? why is there a limit, or how is it set ?\
+\
+there is still a lot of work to do (at least to me !).\
+- i\'92ve been reading posts regarding fixed point math (thanks @zebra !). i get the idea i think but i really need to practice with simple examples before i can get something useful out of the strange attractors. \
+- i don\'92t know how to label the type of the variables.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 - i\'92m looking for a function to trigger the op and another to input a value. could you point me to the way inputs are done from one op to another ? \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 - i need to set the range and scale of the input and output values, something relevant and useful for the bees network. how do i do that ? then : what happens to the values outside of the range ? it\'92s wrapping, right ?\
+- would you change the name of the var in str_att.c (e.g. l, m, n instead of x, y z) ?\
+- is there any coding conventions or style i should be aware of ? could you point me to them ?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 - what would you do after cloning the aleph repo : create a dev branch locally, then create a branch for the op ?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 any help and tips regarding these points would be great !\
+\
+\
+\
+}
