@@ -1,4 +1,5 @@
 prog
+*.zip
 .DS_Store
 *.so
 test
